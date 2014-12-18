@@ -1,0 +1,9 @@
+.metadata
+Servers
+*.class
+.settings
+.gitignore.
+__pycache__
+xmlTest
+pyTest
+mybatis4
