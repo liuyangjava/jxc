@@ -6,7 +6,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'jxc.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin.py', include(admin.site.urls)),
     url(r'^order/index.php', 'apps.orders.views.index'),
     url(r'^order/login.php', 'apps.orders.views.order_login'),
 )
