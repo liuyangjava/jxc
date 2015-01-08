@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^admin.py', include(admin.site.urls)),
     url(r'^order/index.php', 'apps.orders.views.index'),
     url(r'^order/login.php', 'apps.orders.views.order_login'),
+    url(r'^order/main.php', 'apps.orders.views.order_main'),
 )

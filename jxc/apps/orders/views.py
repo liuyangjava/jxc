@@ -1,6 +1,8 @@
 from django.shortcuts import render, render_to_response
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,login,logout
+from django.core.context_processors import request
+from django.http.response import HttpResponseRedirect
 # Create your views here.
 
 def index(request):
@@ -16,9 +18,16 @@ def order_login(request):
     user=authenticate(username=userName,password=passWord)
     
     if user is  None:
+         
         return render_to_response('order/error.html')
     else:
-        print(dir(user))
-        print(user.password)    
+        login(request, user)    
+        print(request.user)   
     
-    return render_to_response('order/main.html',{'user':user})
+    return HttpResponseRedirect('/order/main.php')
+
+@csrf_exempt
+def order_main(request):
+    main_params={'user':request.user}
+    return render_to_response('order/main.html',main_params)
+    
