@@ -9,7 +9,10 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin.py', include(admin.site.urls)),
-    url(r'^order/index.php', 'apps.orders.views.index'),
-    url(r'^order/login.php', 'apps.orders.views.order_login'),
-    url(r'^order/main.php', 'apps.orders.views.order_main'),
+    #url(r'^order/index.php', 'apps.orders.views.index'),
+    #url(r'^order/login.php', 'apps.orders.views.order_login'),
+    #url(r'^order/main.php', 'apps.orders.views.order_main'),
+    
+    # LOGIN MODEL
+    url(r'^index.py', 'apps.login.views.index'),
 )
