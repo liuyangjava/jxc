@@ -9,10 +9,10 @@ var Login = function () {
 	            errorClass: 'help-inline', // default input error message class
 	            focusInvalid: false, // do not focus the last invalid input
 	            rules: {
-	                username: {
+	            	userName: {
 	                    required: true
 	                },
-	                password: {
+	                passWord: {
 	                    required: true
 	                },
 	                remember: {
@@ -21,10 +21,10 @@ var Login = function () {
 	            },
 
 	            messages: {
-	                username: {
+	            	userName: {
 	                    required: "用户名还没写."
 	                },
-	                password: {
+	                passWord: {
 	                    required: "密码还没写."
 	                }
 	            },
@@ -47,7 +47,7 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	                console.log(form);
+	            	form.submit();
 	            }
 	        });
 

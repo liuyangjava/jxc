@@ -8,7 +8,7 @@ def index(request):
     return render_to_response('login/index.html')
 
 @csrf_exempt
-def login(request):
+def BTM_login(request):
     userName=request.POST['userName']
     passWord=request.POST['passWord']
     print("userName:"+userName)
@@ -17,15 +17,14 @@ def login(request):
     user=authenticate(username=userName,password=passWord)
     
     if user is  None:
-         
         return render_to_response('order/error.html')
     else:
-        login(request, user)    
-        print(request.user)   
+        login(request,user)    
+        print(request.user)
     
-    return HttpResponseRedirect('/order/main.php')
+    return HttpResponseRedirect('/main.py')
 
 @csrf_exempt
-def order_main(request):
+def main(request):
     main_params={'user':request.user}
     return render_to_response('order/main.html',main_params)

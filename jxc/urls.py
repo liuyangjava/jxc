@@ -15,4 +15,6 @@ urlpatterns = patterns('',
     
     # LOGIN MODEL
     url(r'^index.py', 'apps.login.views.index'),
+    url(r'^login.py', 'apps.login.views.BTM_login'),
+    url(r'^main.py', 'apps.login.views.main'),
 )
